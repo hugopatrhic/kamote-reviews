@@ -1,0 +1,637 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.kamote{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size: cover;
+    position: absolute;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+    color: #2b2b2b;
+    padding: 1.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* main card */
+.blog-wrapper {
+    max-width: 1000px;
+    width: 100%;
+    background: #fefcf7;
+    border-radius: 36px 36px 28px 28px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    border: 1px solid #e6ddd0;
+}
+
+/* header area*/
+.blog-header {
+    background: #1e2a2f; 
+    padding: 2rem 2rem 1.8rem;
+    text-align: center;
+    border-bottom: 6px solid #c44536; 
+}
+
+.blog-header h1 {
+    font-size: 4rem;
+    letter-spacing: 6px;
+    font-weight: 800;
+    color: #f0e7d3;
+    text-transform: uppercase;
+    word-break: break-word;
+    text-shadow: 4px 4px 0 #6b2d1f;
+    font-family: 'Impact', 'Arial Black', sans-serif; 
+}
+
+.blog-header h1 span {
+    font-size: 2.8rem;
+    display: inline-block;
+    background: #c44536;
+    color: #1e2a2f;
+    padding: 0 0.6rem;
+    border-radius: 60px;
+    margin-left: 0.4rem;
+    text-shadow: none;
+    box-shadow: inset -2px -2px 0 #2d1f14;
+}
+
+.sub-header {
+    font-size: 1.3rem;
+    color: #cab9a3;
+    font-style: italic;
+    margin-top: 0.3rem;
+    border-top: 1px dashed #a07a5c;
+    padding-top: 1rem;
+    display: inline-block;
+}
+
+/* yung icons na part*/
+.icon-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 3rem;
+    padding: 2.5rem 1.5rem 2rem;
+    background: #fffcf5;
+    border-bottom: 2px solid #dbcbb8;
+}
+
+.icon-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #2d2d2d;
+    transition: all 0.2s ease;
+    min-width: 140px;
+}
+
+.icon-button:hover {
+    transform: translateY(-6px);
+}
+
+.icon-circle {
+    width: 120px;
+    height: 120px;
+    background: #f1e5d4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 0 #7c5f4b, 0 12px 20px -8px #b2917a;
+    border: 3px solid #2b2b2b;
+    transition: 0.1s linear;
+    margin-bottom: 0.8rem;
+}
+
+.icon-button:active .icon-circle {
+    transform: translateY(5px);
+    box-shadow: 0 3px 0 #5d4336, 0 8px 12px -4px #a07a5c;
+}
+
+.bike-icon, .person-icon, .dream-icon {
+    width: 70px;
+    height: 70px;
+    position: relative;
+}
+
+.person-icon::before {
+    content: "H";
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: #1e2a2f;
+    line-height: 1;
+    position: absolute;
+    top: 8px;
+    left: 18px;
+    font-family: 'Courier New', monospace;
+}
+.person-icon::after {
+    content: "";
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background: #c44536;
+    border-radius: 50%;
+    top: 0;
+    left: 16px;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* driven bikes*/
+.bike-icon::before {
+    content: "🏍️";
+    font-size: 4rem;
+    position: absolute;
+    top: -25px;
+    left: -10px;
+    filter: drop-shadow(2px 4px 0 #7c5f4b);
+}
+
+/* dream bikes*/
+.dream-icon::before {
+    content: "☁️";
+    font-size: 3rem;
+    letter-spacing: 6px;
+    position: absolute;
+    top: -6px;
+    left: 0;
+    white-space: nowrap;
+    filter: drop-shadow(2px 2px 0 #a07a5c);
+}
+
+.icon-label {
+    font-size: 1.7rem;
+    font-weight: 700;
+    background: #f0e7d3;
+    padding: 0.4rem 1.2rem;
+    border-radius: 60px;
+    border: 2px solid #2b2b2b;
+    box-shadow: 0 5px 0 #6b4f3a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.1s;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    width: fit-content;
+}
+
+.icon-button:hover .icon-label {
+    background: #c44536;
+    color: #f0e7d3;
+    border-color: #411f15;
+    box-shadow: 0 5px 0 #411f15;
+}
+
+/* --- ibang landing page --- */
+.landing-container {
+    padding: 2rem 2rem 2.5rem;
+    background: #fefcf7;
+}
+
+.page {
+    display: none;
+    animation: fade 0.3s;
+}
+
+#about:target, #driven:target, #dream:target {
+    display: block;
+}
+
+/* default show sa page */
+body:not(:has(:target)) #about {
+    display: block;
+}
+
+@keyframes fade {
+    from { opacity:0.2; }
+    to { opacity:1; }
+}
+
+.page-card {
+    background: #faf5ec;
+    border-radius: 40px;
+    padding: 2rem 2.5rem;
+    border: 3px dashed #bc9f84;
+    box-shadow: inset 0 0 0 4px #efe6d8, 0 8px 0 #6b4f3a;
+}
+
+.page h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    border-left: 16px solid #c44536;
+    padding-left: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #1e2a2f;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+/* personal intro styles (moved from inline) */
+.personal-intro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    margin: 1.5rem 0;
+}
+
+.personal-intro .personal-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.personal-intro .personal-text {
+    flex: 1;
+}
+
+.profile-photo {
+    width: 280px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 4px solid #2b2b2b;
+    box-shadow: 6px 6px 0 #3e2f23, 8px 8px 0 #c44536;
+    flex-shrink: 0;
+}
+
+/* stats card style (moved from inline) */
+.stats-card {
+    background: #e3d5c4;
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* bike grid and entry styles */
+.bike-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.8rem;
+    margin: 2rem 0 1rem;
+}
+
+.bike-entry {
+    background: #e8ddd0;
+    border-radius: 24px;
+    padding: 1.5rem 1rem;
+    border: 2px solid #3e2f23;
+    box-shadow: 0 5px 0 #3e2f23;
+    text-align: center;
+}
+
+.bike-entry h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+    color: #2b1c13;
+}
+
+.bike-entry p {
+    font-size: 1rem;
+    color: #3e3027;
+}
+
+/* bike image styles (moved from inline) */
+.bike-entry img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    border: 3px solid #3e2f23;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+.bike-entry img:hover {
+    transform: scale(1.02);
+}
+
+/* dream badge style */
+.dream-badge {
+    background: #b1c7c9;
+    display: inline-block;
+    padding: 0.2rem 1.2rem;
+    border-radius: 60px;
+    font-weight: 600;
+    border: 2px solid #2b2b2b;
+}
+
+/* dream footer note style (moved from inline) */
+.dream-footer-note {
+    margin-top: 2rem;
+    background: #dccfc1;
+    border-radius: 60px;
+    padding: 0.6rem 1.4rem;
+    width: fit-content;
+}
+
+/* jQuery toolbar styles */
+.jquery-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+    justify-content: flex-end;
+    background: #f4ede3;
+    padding: 10px 18px;
+    border-radius: 60px;
+    border: 1px solid #dbcbb8;
+}
+
+.jquery-btn {
+    background: #1e2a2f;
+    border: none;
+    color: #f0e7d3;
+    font-family: inherit;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: 0.1s linear;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.jquery-btn:hover {
+    background: #c44536;
+    transform: translateY(-2px);
+}
+
+.jquery-btn:active {
+    transform: translateY(1px);
+}
+
+.info-message {
+    font-size: 0.85rem;
+    background: #e8ddd0;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 30px;
+    margin-left: 12px;
+}
+
+/* highlight effect sa jQuery */
+.highlight-bike {
+    background: #c44536 !important;
+    transition: 0.2s;
+    box-shadow: 0 0 0 3px #c44536 !important;
+}
+
+.video-banner-wrapper {
+    position: relative;
+    width: 100%;
+    max-height: 320px;
+    overflow: hidden;
+    border-radius: 28px;
+    margin: 0 auto 10px auto;
+}
+
+.bg-video {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.banner-side-logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 160px;
+    height: auto;
+    z-index: 2;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+}
+
+.banner-logo-left {
+    left: 24px;
+}
+
+.banner-logo-right {
+    right: 24px;
+}
+
+.blog-footer {
+    background: #1e2a2f;
+    color: #cbb295;
+    padding: 1.2rem;
+    text-align: center;
+    font-size: 1rem;
+    border-top: 3px solid #c44536;
+}
+
+/* responsive */
+@media (max-width: 650px) {
+    .blog-header h1 { font-size: 2.8rem; }
+    .icon-circle { width: 100px; height: 100px; }
+    .icon-label { font-size: 1.2rem; }
+}
+
+
+/* dark mode styles */
+body.dark-mode {
+    background: #0f1a1f;
+    color: #e8ddd0;
+}
+
+body.dark-mode .blog-wrapper {
+    background: #1a2830;
+    border-color: #2e3f47;
+}
+
+body.dark-mode .blog-header {
+    background: #0d1a20;
+}
+
+body.dark-mode .jquery-toolbar {
+    background: #1a2830;
+    border-color: #2e3f47;
+}
+
+body.dark-mode .jquery-btn {
+    background: #c44536;
+    color: #f0e7d3;
+}
+
+body.dark-mode .jquery-btn:hover {
+    background: #e05545;
+}
+
+body.dark-mode .icon-nav {
+    background: #1a2830;
+    border-color: #2e3f47;
+}
+
+body.dark-mode .icon-circle {
+    background: #2e3f47;
+    box-shadow: 0 8px 0 #0d1a20, 0 12px 20px -8px #000;
+}
+
+body.dark-mode .icon-label {
+    background: #2e3f47;
+    color: #e8ddd0;
+    border-color: #4a6070;
+    box-shadow: 0 5px 0 #0d1a20;
+}
+
+body.dark-mode .icon-button:hover .icon-label {
+    background: #c44536;
+    color: #f0e7d3;
+}
+
+body.dark-mode .landing-container {
+    background: #1a2830;
+}
+
+body.dark-mode .page-card {
+    background: #1e2f38;
+    border-color: #3a5060;
+    box-shadow: inset 0 0 0 4px #243844, 0 8px 0 #0d1a20;
+}
+
+body.dark-mode .stats-card {
+    background: #243844;
+    color: #e8ddd0;
+}
+
+body.dark-mode .bike-entry {
+    background: #243844;
+    border-color: #4a6070;
+    box-shadow: 0 5px 0 #0d1a20;
+}
+
+body.dark-mode .bike-entry h3 {
+    color: #f0e7d3;
+}
+
+body.dark-mode .bike-entry p {
+    color: #c8b8a8;
+}
+
+body.dark-mode .info-message {
+    background: #243844;
+    color: #e8ddd0;
+}
+
+body.dark-mode .dream-footer-note {
+    background: #243844;
+    color: #e8ddd0;
+}
+
+body.dark-mode .blog-footer {
+    background: #0d1a20;
+}
+
+body.dark-mode .sub-header {
+    color: #8a9fa8;
+    border-color: #3a5060;
+}
+
+/* dark mode toggle button */
+.darkmode-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    background: #1e2a2f;
+    color: #f0e7d3;
+    border: 2px solid #c44536;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #6b2d1f, 0 6px 16px rgba(0,0,0,0.3);
+    transition: 0.1s linear;
+}
+
+.darkmode-toggle:hover {
+    background: #c44536;
+    color: #f0e7d3;
+    transform: translateY(-2px);
+}
+
+.darkmode-toggle:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #6b2d1f;
+}
+
+body.dark-mode .darkmode-toggle {
+    background: #c44536;
+    color: #f0e7d3;
+    border-color: #f0e7d3;
+    box-shadow: 0 4px 0 #411f15, 0 6px 16px rgba(0,0,0,0.5);
+}
+
+/*inverts the text when in darkmdoe to white*/
+
+body.dark-mode .page h2 {
+    color: #f0e7d3;
+}
+
+body.dark-mode .personal-intro .personal-name {
+    color: #f0e7d3;
+}
+
+body.dark-mode .personal-intro p {
+    color: #e8ddd0;
+}
+
+body.dark-mode .personal-intro strong {
+    color: #f0e7d3;
+}
+
+body.dark-mode .stats-card p {
+    color: #e8ddd0;
+}
+
+body.dark-mode .stats-card strong {
+    color: #f0e7d3;
+}
+
+body.dark-mode .stats-card em {
+    color: #c8b8a8;
+}
+
+body.dark-mode .bike-entry h3 {
+    color: #f0e7d3;
+}
+
+body.dark-mode .bike-entry p {
+    color: #c8b8a8;
+}
+
+body.dark-mode .bike-entry strong {
+    color: #f0e7d3;
+}
+
+body.dark-mode .dream-footer-note {
+    color: #e8ddd0;
+}
+
+body.dark-mode .blog-footer {
+    color: #cbb295;
+}
+
+body.dark-mode .icon-button {
+    color: #e8ddd0;
+}
+
+.bike-entry img {
+    cursor: pointer;
+}

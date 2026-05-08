@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hyuu · kamote reviews</title>
+    <link rel="stylesheet" href="design.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="video-banner-wrapper">
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="/persBlog/motorcycle.mp4" type="video/mp4">
+  </video>
+  <img src="/persBlog/kamote.png" alt="kamote logo left" class="banner-side-logo banner-logo-left">
+  <img src="/persBlog/kamote.png" alt="kamote logo right" class="banner-side-logo banner-logo-right">
+</div>
+
+    <div class="blog-wrapper">
+        <header class="blog-header">
+            <h1>KAMOTE <span>REVIEWS</span></h1>
+            <div class="sub-header">—— personal bike log ——</div>
+        </header>
+
+        <div class="jquery-toolbar">
+            <button class="jquery-btn" id="highlightDrivenBtn">Highlight Driven Bikes</button>
+            <button class="jquery-btn" id="highlightDreamBtn">Highlight Dream Bikes</button>
+            <button class="jquery-btn" id="countBikesBtn">Count All Bikes</button>
+            <button class="jquery-btn" id="resetHighlightsBtn">Reset Highlights</button>
+            <span id="bikeCountDisplay" class="info-message">ready</span>
+        </div>
+
+        <div class="icon-nav">
+            <a href="#about" class="icon-button">
+                <div class="icon-circle">
+                    <div class="person-icon" title="about hyuu"></div>
+                </div>
+                <span class="icon-label">about hyuu</span>
+            </a>
+
+            <a href="#driven" class="icon-button">
+                <div class="icon-circle">
+                    <div class="bike-icon" title="driven bikes"></div>
+                </div>
+                <span class="icon-label">driven bikes</span>
+            </a>
+
+            <a href="#dream" class="icon-button">
+                <div class="icon-circle">
+                    <div class="dream-icon" title="dream bikes"></div>
+                </div>
+                <span class="icon-label">dream bikes</span>
+            </a>
+        </div>
+
+        <div class="landing-container">
+            <div id="about" class="page">
+                <div class="page-card">
+                    <h2> about hyuu</h2>
+                    <div class="personal-intro">
+                        <img src="/persBlog/prof.jpg" 
+                                 alt="hyuu profile picture" 
+                                 class="profile-photo">
+                        <div class="personal-text">
+                            <p class="personal-name">hyuu · motorcycle enthusiast</p> 
+                            <br>
+                            <p>Real name <strong>Patrhic Josh V. Hugo</strong>. A Computer Engineering student, started this blog to remember every motorcycle he's ridden and his thoughts on the motorcycles on what he's ridden. Lives in Lucban, rides everyday kasi inuutusan, and dreams on weekdays :p .</p>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <p><strong>⚙️ personal stats:</strong> 21 yrs old · 2 bikes owned · 2 yrs riding · favourite bike: honda rebel</p>
+                        <p><strong>📸 currently riding:</strong> 2018 yamaha Mio i125s / minor customization </p>
+                        <br>
+                        <p><em>“kamote reviews — because why ride normally when pwedeng mangamote.”</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="driven" class="page">
+                <div class="page-card">
+                    <h2>🔧 driven bikes · reviews</h2>
+                    <div class="bike-grid">
+                        <!-- bawat bike may kanya-kanyang image, pwedeng palitan yung src -->
+                        <div class="bike-entry">
+                            <img src="/persBlog/mio.jpg" alt="Yamaha Mio i125s" class="bike-img" data-bike="mio">
+                            <h3>Yamaha Mio i125s</h3>
+                            <p>"current bike, owned for the past 7yrs by my father. good service for daily use and can handle out of town rides. well maintained"<br> 8/10 kamotes</p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/wave.png" alt="Honda Wave" class="bike-img" data-bike="wave">
+                            <h3>Honda Wave</h3>
+                            <p>"great for town use, owned by my friend. not well maintained and not safe for beginners". <br>5/10 kamotes</p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/nmax.jpg" alt="Yamaha Nmax V2" class="bike-img" data-bike="nmax">
+                            <h3>Yamaha Nmax V2</h3>
+                            <p>"well rounded bike overall, best for long rides and very stylish. one of my personal favorites".<br> 9/10 kamotes</p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/fazzio.jpg" alt="Yamaha Fazzio" class="bike-img" data-bike="fazzio">
+                            <h3>Yamaha Fazzio</h3>
+                            <p>"very stylish bike good for beginners and town use, not so much for going outside town proper but well maintained."<br> 7/10 kamotes</p>
+                        </div>
+                        <div class="bike-entry">
+                             <img src="/persBlog/aerox.jpg" alt="Yamaha Aerox v2" class="bike-img" data-bike="aerox">
+                            <h3>Yamaha Aerox v2</h3>
+                            <p>"A perfect balance of style and practicality. Great for in and out-of-town rides. Not that heavy on gas and is very customizable".<br><br><strong> 9/10 kamotes</strong></p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/rc.jpg" alt="Rusi 250i" class="bike-img" data-bike="rc250i">
+                            <h3>Rusi 250i</h3>
+                             <p>"A very "Daniel Padilla" looking bike, really like its classic look runs' and sounds great. Not great for short riders(can't relate) fuel injected which is nicefor saving gas".<br><br><strong> 8/10 kamotes</strong></p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/bajaj.jpg" alt="Bajaj CT125" class="bike-img" data-bike="bajaj">
+                            <h3>Kawasaki Bajaj CT125</h3>
+                             <p>"Owned by Brian. It gets the job done, budget friendly but mainly used for Tricycles. Down side is its lack of modern features and is very gas heavy".<br><br><strong> 6/10 kamotes</strong></p>
+                        </div>                        
+                        <div class="bike-entry">
+                            <img src="/persBlog/nk.jpg" alt="CFMoto 400NK" class="bike-img" data-bike="nk400">
+                            <h3>CFMoto 400NK</h3>
+                             <p>"Budget friendly and expressway legal big bike. One of the best big bikes i was able to ride at its peak, good for short riders(can't relate) very handsome and sounds great(the bikes im riding in my profile)".<br><br><strong> 10/10 kamotes</strong></p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/z650.jpg" alt="kawasaki z650" class="bike-img" data-bike="z650">
+                            <h3>Kawasaki z650</h3>
+                             <p>"Also one of my dream bikes to own but this one i've ridden, it runs so good and very powerful. Unfortunately, i didnt get to test it at it's max power(scaredy cat)".<br><br><strong> 9/10 kamotes</strong></p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/click.png" alt="Honda Click 125" class="bike-img" data-bike="Click125i">
+                            <h3>Honda Click 125i</h3>
+                             <p>"Not that different from my Mio i125s tbh, but it offers a bit more of a mascular style based from its looks. a great overall daily rider".<br><br><strong>7.7/10 kamotes</strong> </p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/choinori.jpg" alt="Suzuki Choinori" class="bike-img" data-bike="Choinori">
+                            <h3>Suzuki Choinori</h3>
+                             <p>"Considering the bike is only 50cc it's still really nice to ride. Mainly made for within town use, it's very gas friendly. cute too".<br><br><strong>7/10 kamotes</strong></p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/pallet.jpg" alt="Let's 4 Pallet" class="bike-img" data-bike="Pallet">
+                            <h3>Suzuki Let's 4 Pallet</h3>
+                             <p>"Like the "Choinori" it's own by the same friend, slight improvement in performance over the other 50cc bike and is more stylish and cute. ".<br><br><strong> 8/10 kamotes</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== DREAM BIKES PAGE (wishlist + images) ========== -->
+            <div id="dream" class="page">
+                <div class="page-card">
+                    <h2>☁️ dream bikes · wishlist</h2>
+                    <div class="bike-grid">
+                        <div class="bike-entry">
+                            <img src="/persBlog/rebel.jpg" alt="Honda Rebel 600" class="bike-img" data-bike="rebel">
+                            <h3>Honda Rebel 600</h3>
+                            <p>“the ultimate kamote cruiser”</p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/ninja.jpg" alt="Ninja ZX-6R" class="bike-img" data-bike="ninja">
+                            <h3>Ninja ZX-6R</h3>
+                            <p>"the sound is just badass"</p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/w800.webp" alt="Kawasaki W800" class="bike-img" data-bike="w800">
+                            <h3>Kawasaki W800</h3>
+                            <p>"the most <em>swabe</em> bike for me to modify"</p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/xsr.webp" alt="Yamaha XSR155" class="bike-img" data-bike="xsr">
+                            <h3>Yamaha XSR155</h3>
+                            <p>"daily driver/use, full chrome · maybe one day"</p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/bon.jpg" alt="Triumph Bonneville Bobber" class="bike-img" data-bike="bonneville">
+                            <h3>Triumph Bonneville Bobber</h3>
+                            <p>"One word <strong>Macho</strong>"</p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/s4x.webp" alt="Triumph Scrambler 400 X" class="bike-img" data-bike="Scrambler">
+                            <h3>Triumph Scrambler 400 X</h3>
+                            <p>"Off-road trail bike. Very tall"</p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/cbr.JPG" alt="Honda CB650R" class="bike-img" data-bike="CBR">
+                            <h3>Honda CB650R</h3>
+                            <p>"Inline 4 engine, need i say more"</p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/imperiale.png" alt="Benelli Imperiale 400 " class="bike-img" data-bike="benelli">
+                            <h3>Benelli Imperiale 400 </h3>
+                            <p>"Dream project bike to build into a caferacer"</p>
+                        </div>
+                        <div class="bike-entry">
+                            <img src="/persBlog/napoleon.webp" alt="Benda Napoleon Bob 500" class="bike-img" data-bike="Napoleon">
+                            <h3>Benda Napoleon Bob 500</h3>
+                            <p>"Cruiser that just looks so <strong>"pogi"</strong> looking"</p>
+                        </div>
+                    </div>
+                    <div class="dream-footer-note">
+                        ⭐ dream bikes == will review them… in the future
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="blog-footer">
+            🚲 kamote reviews · college student edition · #kamote
+        </footer>
+    </div>
+     <script src="rice.js"></script>
+     <button class="darkmode-toggle" id="darkModeToggle">🌙 dark mode</button>
+</body>
+</html>
